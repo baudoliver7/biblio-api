@@ -1,9 +1,8 @@
 package com.biblio.dto;
 
 import lombok.Data;
-
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 
 @Data
@@ -17,4 +16,7 @@ public class CreateBookRequest {
     @NotBlank
     private String title;
 
+    @Schema(example = "5")
+    @Min(value=0)
+    private Integer copies;
 }
